@@ -21,15 +21,18 @@ class Trie
 {
 
 private:
-	bool isWordEnd;
+	bool wordEnd;
 
 public:
 	Trie *children[ALPHABET_SIZE]{};
 	//Constructor of a Trie node
 	Trie(){
+		//set all child nodes as null
 		for (auto & i : children)
 			i = nullptr;
-		isWordEnd = false;
+		//initial root node is not end of word
+		//because we have not inserted anything yet
+		wordEnd = false;
 	};
 	Trie * getNode();
 
@@ -48,11 +51,11 @@ public:
 
 	//recursive part that explores all options
 	//from a particular node
-	void suggestionsRec(Trie* root, string currPrefix);
+	void SuggestRecursive(Trie* root, string currPrefix);
 
 	//the main function that supports the autocorrect feature
 	//lets you print the suggestions for what words are available
-	int printAutoSuggestions(Trie* root, const string& query);
+	int printSuggestions(Trie* root, const string& query);
 
 };
 

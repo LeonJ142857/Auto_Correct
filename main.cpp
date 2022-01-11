@@ -14,7 +14,7 @@ int main() {
 //	root->insert(root, "helps");
 //	root->insert(root, "helping");
 
-//	int comp = root->printAutoSuggestions(root, "hel");
+//	int comp = root->printSuggestions(root, "hel");
 	int option = 0;
 	while(option != 3){
 		cout << "Here's the options:\n1. Insert\n2. Suggest\n3. Quit" << endl;
@@ -28,7 +28,7 @@ int main() {
 			cout << "Type a prefix to get suggestions:" << endl;
 			string word; cin >> word;
 			cout << "The suggestions are:\n";
-			int comp = root->printAutoSuggestions(root, word);
+			int comp = root->printSuggestions(root, word);
 			if (comp == -1)
 				cout << "No other strings found with this prefix\n";
 			else if (comp == 0)
