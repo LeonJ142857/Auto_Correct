@@ -25,25 +25,33 @@ private:
 
 public:
 	Trie *children[ALPHABET_SIZE]{};
+	//Constructor of a Trie node
 	Trie(){
 		for (auto & i : children)
 			i = nullptr;
 		isWordEnd = false;
 	};
 	Trie * getNode();
-// If not present, inserts key into trie.  If the
-// key is prefix of trie node, just marks leaf node
+
+	//insert each character as a node
+	//a word is marked by its end node having
+	//isEndWord flag set to true
 	void insert(Trie *root, const string& key);
-// Returns true if key presents in trie, else false
+
+	//checks whether or not a particular string
+	//is a word stored in the trie
 	bool search(Trie *root, const string& key);
-// Returns 0 if current node has a child
-// If all children are NULL, return 1.
+
+	//checks whether or not a node is the last node
+	//meaning it has no children
 	bool isLastNode(Trie* root);
-// Recursive function to print auto-suggestions for given
-// node.
+
+	//recursive part that explores all options
+	//from a particular node
 	void suggestionsRec(Trie* root, string currPrefix);
 
-// print suggestions for given query prefix.
+	//the main function that supports the autocorrect feature
+	//lets you print the suggestions for what words are available
 	int printAutoSuggestions(Trie* root, const string& query);
 
 };
