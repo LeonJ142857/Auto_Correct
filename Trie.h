@@ -55,7 +55,7 @@ public:
 
 	//the main function that supports the autocorrect feature
 	//lets you print the suggestions for what words are available
-	int printSuggestions(Trie* root, const string& query);
+	pair<int, vector<int>> printSuggestions(Trie* root, const string& query);
 
 };
 
