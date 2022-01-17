@@ -107,6 +107,7 @@ int main() {
 //	root->insert(root, "helping");
 
 //	int comp = root->printSuggestions(root, "hel");
+	Trie* true_root = new Trie();
 	int option = 0;
 	while(option != 3){
 		cout << "Here's the options:\n1. Insert\n2. Suggest\n3. Quit" << endl;
@@ -114,13 +115,13 @@ int main() {
 		if(option == 1){
 			cout << "What word do you want to type?" << endl;
 			string word; cin >> word;
-			root->insert(root, word);
+			true_root->insert(true_root, word);
 		}
 		else if(option == 2){
 			cout << "Type a prefix to get suggestions:" << endl;
 			string word; cin >> word;
 			cout << "The suggestions are:\n";
-			int comp = root->printSuggestions(root, word);
+			int comp = true_root->printSuggestions(true_root, word);
 			if (comp == -1)
 				cout << "No other strings found with this prefix\n";
 			else if (comp == 0)
