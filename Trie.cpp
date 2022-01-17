@@ -2,7 +2,6 @@
 // Created by Asus on 1/10/2022.
 //
 #include <iostream>
-#include <vector>
 #include "Trie.h"
 
 Trie * Trie::getNode()
@@ -98,7 +97,7 @@ void Trie::SuggestRecursive(Trie *root, string currPrefix) {
 
 //the main function that supports the autocorrect feature
 //lets you print the suggestions for what words are available
-pair<int, vector<string>> Trie::printSuggestions(Trie* root, vector<string> suggestions, const string& query){
+int Trie::printSuggestions(Trie* root, const string& query){
 	//crawler pointer, set to root
 	Trie* trieCrawler = root;
 	//perform standard search algorithm
